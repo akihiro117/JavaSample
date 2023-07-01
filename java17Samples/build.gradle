@@ -18,15 +18,20 @@ test {
     useJUnitPlatform()
 }
 
-// コンパイル時にpreview機能をonにする。
-// https://docs.gradle.org/current/dsl/org.gradle.api.tasks.compile.JavaCompile.html
 tasks.withType(JavaCompile).configureEach {
+    // コンパイル時にpreview機能をonにする。
+    // https://docs.gradle.org/current/dsl/org.gradle.api.tasks.compile.JavaCompile.html
     options.compilerArgs += "--enable-preview"
+    // vector API を使えるようにする。
+    options.compilerArgs += ["--add-modules", "jdk.incubator.vector"]
 }
 
-// 実行時にpreview機能をonにする。
-// https://docs.gradle.org/current/dsl/org.gradle.api.tasks.JavaExec.html
+
 tasks.withType(JavaExec).configureEach {
+    // 実行時にpreview機能をonにする。
+    // https://docs.gradle.org/current/dsl/org.gradle.api.tasks.JavaExec.html
     jvmArgs += "--enable-preview"
+    // vector API を使えるようにする。
+    jvmArgs += ["--add-modules", "jdk.incubator.vector"]
 }
 

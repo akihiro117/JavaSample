@@ -4,6 +4,7 @@ import java.util.List;
 
 /**
  * 複数のListを1つのListにまとめるサンプル。
+ * JDK17
  */
 public class MergeMultipleListIntoSingleList {
     public static void main(String[] args) {

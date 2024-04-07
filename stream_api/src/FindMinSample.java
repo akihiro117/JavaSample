@@ -2,6 +2,10 @@ import java.util.Arrays;
 import java.util.Comparator;
 import java.util.List;
 
+/**
+ * Listからminを求めるサンプル。
+ * JDK17
+ */
 public class FindMinSample {
     public static void main(String[] args) {
         System.out.println("独自オブジェクトのListから特定の値が最小のオブジェクトを見つけるサンプル");
